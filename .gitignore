@@ -1,12 +1,39 @@
-*.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+import java.io.*;
+import java.util.Scanner;
+public class Solution {
+	public static int addDigits(int num){
+		int digit, hund, thou, tenthou, hunthou,d1, d2, d3, d4, d5, sum;
+		digit = num % 10;
+		num = num / 10;
+		hund = num % 10;
+		num = num / 10;
+		thou = num % 10;
+		num = num / 10;
+		tenthou = num % 10;
+		num = num / 10;
+		hunthou = num % 10;
+		num = num / 10;
+		d1 = num % 10;
+		num = num / 10;
+		d2 = num % 10;
+		num = num / 10;
+		d3 = num % 10;
+		num = num / 10;
+		d4 = num % 10;
+		num = num / 10;
+		d5 = num % 10;
+		sum = digit+hund+thou+tenthou+hunthou+d1+d2+d3+d4+d5;
+		if(sum>9){
+			sum = sum / 10 + sum % 10;
+		}
+		if(sum>9){
+			sum = sum / 10 + sum % 10;
+        }
+		return sum;
+	}
+	public static void main(String argv[]){
+	Scanner data = new Scanner(System.in);
+	int number = data.nextInt();
+	System.out.println(addDigits(number));
+	}	
+}
